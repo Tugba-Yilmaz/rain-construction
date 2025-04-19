@@ -1,0 +1,90 @@
+{
+    "navbar": {
+      "home": "Home",
+      "about": "About Us",
+      "projects": "Projects",
+      "contact": "Contact Us"
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Modern Apartments In Center Of Athens",
+      "description": "The building is located in the heart of Athens. It is close to the Embassy of the United States, the University of Athens, important hospitals, hotels, embassies, many government structures, and metro station. It is only 7 minutes from Syntagma Square and only 13 minutes from Acropolis by car."
+    },
+    "home": {
+      "explore": "Explore Now",
+      "comingSoon": "Coming Soon",
+      "haveQuestion": "Have any question?",
+      "writeEmail": "Write email",
+      "visitAnytime": "Visit anytime"
+    },
+    "pirinis": {
+      "title": "Modern Life at Pirinis 6",
+      "subtitle": "Contemporary Comfort in Athens",
+      "description1": "Discover a sophisticated residential experience in Pirinis. With modern design, quality materials and prime location, this project brings together functionality and aesthetics.",
+      "description2": "Located in the heart of Athens with easy access to main roads and public transport.",
+      "featuresTitle": "Key Features",
+      "features": [
+        "Contemporary Architecture",
+        "High-Quality Construction",
+        "Energy Efficient Design",
+        "Private Balconies",
+        "Secure Underground Parking"
+      ],
+      "callToAction": "Discover your new lifestyle at Pirinis—contact us for more information!",
+      "stats": {
+        "ground": "Ground (m²)",
+        "parking": "Car parkings",
+        "floors": "Floors",
+        "storage": "Storage Rooms"
+      }
+    },
+    "agkilis": {
+  "title": "Modern Living in the Heart of Athens",
+  "subtitle": "Agkilis 56, Neos Kosmos",
+  "description1": "Our prestigious new development is rising in Neos Kosmos, one of Athens’ most sought-after neighborhoods. With its central location, modern architecture, and excellent transport links, this project is designed to elevate your lifestyle and add value to your investment.",
+  "whyTitle": "Why Choose Agkilis 56?",
+  "point1": "🔝 Elegant 5-story building with 3 modern apartments per floor.",
+  "point2": "🔝 Just a 5-minute walk from Neos Kosmos Metro Station.",
+  "point3": "🔝 Proximity to supermarkets, cafes, restaurants, and shopping centers.",
+  "point4": "🔝 Prime location with excellent accessibility.",
+  "point5": "🔝 Safe, peaceful, and enjoyable neighborhood atmosphere.",
+  "description2": "Live in the center of Athens, at the heart of it all!"
+},
+"fotiou": {
+  "title": "Project Fotiou Koritsas",
+  "subtitle": "Modern Apartments In Center Of Piraeus",
+  "description1": "Located in one of Piraeus’ most central areas, Fotiou Koritsas 84 is a 6-story modern residential project that offers both an excellent investment opportunity and a comfortable urban lifestyle.",
+  "description2": "With its prime location and high-quality design, this project is the perfect choice for those seeking a contemporary and well-connected home.",
+  "areaTitle": "Area Overview",
+  "area1": "Piraeus is a dynamic and rapidly developing district, home to Greece’s largest port and a hub of commerce, education, and lifestyle.",
+  "area2": "Combining the vibrancy of city life with the serenity of coastal living, this area offers everything residents need for a comfortable and convenient lifestyle.",
+  "locationTitle": "Key Location Benefits:",
+  "metro": "Metro Station:",
+  "airport": "Athens International Airport:",
+  "port": "Port of Piraeus:",
+  "school": "School:",
+  "university": "University of Piraeus:",
+  "featuresTitle": "Project Features",
+  "feature1": "Modern architectural design with premium materials",
+  "feature2": "Spacious, bright, and functional apartments",
+  "feature3": "Easy access to public transport and major roads",
+  "feature4": "Prime location with essential amenities nearby",
+  "cta": "Don’t miss the chance to be part of this exclusive development!"
+},
+"papagou": {
+  "title": "Luxury Living in Papagou!",
+  "description1": "Experience modern elegance in the heart of Papagou with our exclusive 5-story luxury residence. Designed with contemporary architecture and premium materials, these spacious and stylish apartments offer the perfect blend of comfort and sophistication.",
+  "description2": "Nestled in a serene and prestigious neighborhood, this project brings you closer to nature while keeping you connected to the city.",
+  "featuresTitle": "Key Features:",
+  "feature1": "✅ Modern and elegant design",
+  "feature2": "✅ Spacious balconies with panoramic views",
+  "feature3": "✅ High-quality materials and luxury finishes",
+  "feature4": "✅ Prime location with excellent accessibility",
+  "feature5": "✅ A peaceful lifestyle surrounded by nature",
+  "cta": "Discover your dream home in Papagou today—contact us for more details!"
+}
+
+
+
+  }
+  

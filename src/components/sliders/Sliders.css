@@ -1,0 +1,133 @@
+/* Genel slider alanı */
+.slider-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Slider başlığı */
+.slider-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Her slide içeriği */
+.slider-slide {
+  display: flex !important;
+  justify-content: center;
+}
+
+/* Slide içindeki görsel */
+.slider-img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* React Slick default oklar */
+.slick-prev,
+.slick-next {
+  z-index: 2;
+  font-size: 2rem;
+  color: #444;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #f39c12;
+}
+
+/* Slick içindeki slide boşluk */
+.slick-slide > div {
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Dots */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #444;
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+/* Özel Oklar */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-arrow.prev {
+  left: -20px;
+}
+
+.custom-arrow.next {
+  right: -20px;
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .slider-wrapper {
+    padding: 1rem 0.5rem;
+  }
+
+  .slider-title {
+    font-size: 1.4rem;
+  }
+
+  .custom-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .custom-arrow.prev {
+    left: 0;
+  }
+
+  .custom-arrow.next {
+    right: 0;
+  }
+}
+/* Tablet ve daha büyük ekranlar için */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .slider-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .slider-title {
+    font-size: 2rem;
+  }
+
+  .custom-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
+}

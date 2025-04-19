@@ -1,0 +1,180 @@
+.home-container {
+  padding: 2rem;
+  background-color: #fff; /* Beyaz arka plan */
+  min-height: 100vh;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Her sırada 3 proje */
+  gap: 2rem;
+}
+
+.project-card {
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Daha yumuşak ve derin gölge */
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+ 
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+/* Başlık kısmı */
+.project-title {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.project-title a {
+  color: #222;
+  text-decoration: none;
+}
+
+.project-title a:hover {
+  text-decoration: underline;
+}
+
+/* Explore Now linki */
+.project-desc {
+  font-size: 0.9rem;
+  color: #4c6ef5;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+
+.project-desc:hover {
+  text-decoration: underline;
+}
+
+/* Coming Soon etiketi */
+.coming-soon-label {
+  margin-top: 0.5rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* Bulanık projeler */
+.blurred {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+
+/* Responsive kırılımlar */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contact ve footer bölümü */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background: #f9f9f9;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 400px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-info h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.contact-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .contact-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  iframe {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+
+.footer {
+  background-color: #2f2f36;
+  color: #4c6ef5;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: #4c6ef5;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.contact-link {
+  font-size: 1.1rem;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}

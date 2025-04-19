@@ -1,0 +1,170 @@
+/* components/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2f2f36;
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.navbar-logo img {
+  height: 80px;
+  border-radius: 4px;
+  background: white;
+  padding: 4px;
+}
+
+.brand-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a,
+.dropdown span {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.dropdown-menu a:hover {
+  color: #f39c12;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #3c3c44;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a,
+.disabled-link {
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.disabled-link {
+  color: #aaa;
+  cursor: not-allowed;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #2f2f36;
+    padding: 1rem;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown span {
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background-color: #3c3c44;
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+    width: 100%;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+
+  .navbar-logo img {
+    height: 48px;
+  }
+
+  .brand-text {
+    font-size: 1.1rem;
+  }
+}
+
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.language-switcher button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.language-switcher button:hover {
+  color: #f39c12;
+}

@@ -1,0 +1,69 @@
+/* Global Reset */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sayfa içerik sarmalayıcısı */
+.page-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+/* Responsive tasarım için */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 0.5rem;
+  }
+}
+/* Flexbox ayarları */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+/* Responsive tasarım için */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Flexbox ayarları */
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/* Responsive tasarım için */
+@media (max-width: 768px) {
+  .flex-container-column {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Flexbox ayarları */
+.flex-container-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/* Responsive tasarım için */
+@media (max-width: 768px) {
+  .flex-container-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}

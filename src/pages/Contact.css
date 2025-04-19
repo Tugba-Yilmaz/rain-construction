@@ -1,0 +1,110 @@
+/* Sayfa kapsayıcı */
+.contact-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Harita ve iletişim bloğu */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+.contact-section > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Harita kutusu */
+.contact-map {
+  flex: 1;
+  min-width: 300px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.contact-map iframe {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: none;
+  line-height: 0;
+  font-size: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: top;
+}
+
+/* İletişim kutusu */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Her iletişim öğesi */
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+/* Simgeler */
+.contact-icon {
+  font-size: 1.5rem;
+  color: #f39c12;
+  margin-bottom: 0.4rem;
+}
+
+/* Linkler */
+.contact-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222;
+  text-decoration: none;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+/* Açıklama yazısı */
+.contact-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 1rem;
+  }
+
+  .contact-section {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-map,
+  .contact-info {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .contact-map iframe {
+    height: 250px;
+  }
+}
