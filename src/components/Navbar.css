@@ -45,7 +45,7 @@
 }
 
 .nav-links a,
-.dropdown span {
+.nav-links .nav-item span {
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -57,7 +57,8 @@
   color: #f39c12;
 }
 
-.dropdown {
+/* Dropdown container */
+.nav-item.dropdown {
   position: relative;
 }
 
@@ -72,7 +73,7 @@
   z-index: 999;
 }
 
-.dropdown:hover .dropdown-menu {
+.nav-item.dropdown:hover .dropdown-menu {
   display: flex;
 }
 
@@ -89,6 +90,7 @@
   font-style: italic;
 }
 
+/* Burger menu button */
 .burger {
   display: none;
   font-size: 1.8rem;
@@ -99,6 +101,7 @@
   z-index: 1001;
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
   .burger {
     display: block;
@@ -107,6 +110,7 @@
   .nav-links {
     display: none;
     flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 100%;
     left: 0;
@@ -114,19 +118,23 @@
     background-color: #2f2f36;
     padding: 1rem;
     z-index: 999;
+    gap: 1.2rem;
   }
 
   .nav-links.open {
     display: flex;
   }
 
-  .dropdown {
+  .nav-links a,
+  .nav-links .nav-item span {
     width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
   }
 
-  .dropdown span {
-    padding: 0.5rem 0;
+  .nav-item.dropdown {
     width: 100%;
+    text-align: center;
   }
 
   .dropdown-menu {
@@ -134,12 +142,18 @@
     background-color: #3c3c44;
     display: none;
     flex-direction: column;
-    padding-left: 1rem;
     width: 100%;
+    padding-left: 0;
+    text-align: center;
   }
 
-  .dropdown:hover .dropdown-menu {
+  .nav-item.dropdown:hover .dropdown-menu {
     display: flex;
+  }
+
+  .dropdown-menu a {
+    padding: 0.5rem;
+    text-align: center;
   }
 
   .navbar-logo img {
@@ -151,6 +165,7 @@
   }
 }
 
+/* Dil seçici */
 .language-switcher {
   display: flex;
   gap: 0.5rem;

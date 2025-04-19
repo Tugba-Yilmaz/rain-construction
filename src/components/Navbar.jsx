@@ -22,23 +22,40 @@ function Navbar() {
       </div>
 
       <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
-        <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>{t('navbar.home')}</Link>
-        <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>{t('navbar.about')}</Link>
-        <div className="dropdown">
-          <span>{t('navbar.projects')} ▾</span>
-          <div className="dropdown-menu">
-            {allProjects.map(project =>
-              project.comingSoon ? (
-                <span key={project.id} className="disabled-link">{project.title}</span>
-              ) : (
-                <Link key={project.id} to={`/projects/${project.id}`} onClick={() => setIsMobileMenuOpen(false)}>
-                  {project.title}
-                </Link>
-              )
-            )}
-          </div>
-        </div>
-        <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>{t('navbar.contact')}</Link>
+        
+      <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+  {t('navbar.home')}
+</Link>
+
+<Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>
+  {t('navbar.about')}
+</Link>
+
+<div className="nav-item dropdown">
+  <span>{t('navbar.projects')} ▾</span>
+  <div className="dropdown-menu">
+    {allProjects.map(project =>
+      project.comingSoon ? (
+        <span key={project.id} className="disabled-link">
+          {project.title}
+        </span>
+      ) : (
+        <Link
+          key={project.id}
+          to={`/projects/${project.id}`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          {project.title}
+        </Link>
+      )
+    )}
+  </div>
+</div>
+
+<Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+  {t('navbar.contact')}
+</Link>
+
       </div>
 
       <select onChange={(e) => changeLanguage(e.target.value)} value={i18n.language} style={{ marginLeft: '1rem' }}>
