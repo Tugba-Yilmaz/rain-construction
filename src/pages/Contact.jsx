@@ -16,12 +16,9 @@ const Contact = () => {
           <div className="contact-map">
             <iframe
               src="https://www.google.com/maps?q=Avlidos%2024,%20Athens&output=embed"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
+              title="Map"
               allowFullScreen=""
               loading="lazy"
-              title="Map"
             ></iframe>
           </div>
 
