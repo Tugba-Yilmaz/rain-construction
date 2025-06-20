@@ -77,10 +77,10 @@ const Pirinis = () => {
                 <p>{t('home.haveQuestion')}</p>
               </div>
             </a>
-            <a href="mailto:rainconstructiongr@gmail.com">
+            <a href="mailto:info@rainconstructiongr.com">
               <FaEnvelope style={{ color: '#f39c12' }} />
               <div>
-                <strong>rainconstructiongr@gmail.com</strong>
+                <strong>info@rainconstructiongr.com</strong>
                 <p>{t('home.writeEmail')}</p>
               </div>
             </a>

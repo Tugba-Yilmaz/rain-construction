@@ -32,8 +32,8 @@ const Contact = () => {
 
             <div className="contact-item">
               <FaEnvelope className="contact-icon" />
-              <a href="mailto:rainconstructiongr@gmail.com" className="contact-link">
-                rainconstructiongr@gmail.com
+              <a href="mailto:info@rainconstructiongr.com" className="contact-link">
+               info@rainconstructiongr.com
               </a>
               <p>{t('home.writeEmail')}</p>
             </div>

@@ -30,11 +30,20 @@ const PirinisInteriorSlider = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 2, // Masaüstünde 2 göster
     slidesToScroll: 1,
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 768, // Ekran genişliği 768px ve altıysa
+        settings: {
+          slidesToShow: 1, // 1 görsel göster
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -50,5 +59,6 @@ const PirinisInteriorSlider = () => {
     </div>
   );
 };
+
 
 export default PirinisInteriorSlider;

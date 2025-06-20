@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // ikonlar için
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const interiorImages = [
   '/images/fotiou/fotiou-interior1.jpg',
@@ -58,10 +58,19 @@ const FotiouInteriorSlider = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 2, // Masaüstünde 2 göster
     slidesToScroll: 1,
     prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />
+    nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 768, // Mobil için
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -73,7 +82,7 @@ const FotiouInteriorSlider = () => {
             <img
               src={src}
               alt={`Interior ${index + 1}`}
-              style={{ width: '100%', borderRadius: '8px', padding: '0 10px' }}
+              className="slider-img"
             />
           </div>
         ))}

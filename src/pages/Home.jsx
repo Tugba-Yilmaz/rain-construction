@@ -61,8 +61,8 @@ function Home() {
 
             <div className="contact-item">
               <FaEnvelope style={{ color: '#f39c12', marginRight: '8px' }} />
-              <a href="mailto:rainconstructiongr@gmail.com" className="contact-link">
-                rainconstructiongr@gmail.com
+              <a href="mailto:info@rainconstructiongr.com" className="contact-link">
+                info@rainconstructiongr.com
               </a>
               <p>{t('home.writeEmail')}</p>
             </div>
