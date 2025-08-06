@@ -3,12 +3,12 @@ import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const planImages = [
-  '/images/fotiou/fotiou-plan1.jpg',
-  '/images/fotiou/fotiou-plan2.jpg',
-  '/images/fotiou/fotiou-plan3.jpg',
-  '/images/fotiou/fotiou-plan4.jpg',
-  '/images/fotiou/fotiou-plan5.jpg',
-  '/images/fotiou/fotiou-plan6.jpg',
+ '/images/fotiou/fotiou-plan1-new.webp',
+  '/images/fotiou/fotiou-plan2-new.webp',
+  '/images/fotiou/fotiou-plan3-new.webp',
+  '/images/fotiou/fotiou-plan4-new.webp',
+  '/images/fotiou/fotiou-plan5-new.webp',
+  '/images/fotiou/fotiou-plan6-new.webp',
 ];
 
 // Özel sol buton

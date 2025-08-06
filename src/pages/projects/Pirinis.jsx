@@ -15,7 +15,7 @@ const Pirinis = () => {
       <div className="project-detail-container">
         <div className="project-header">
           <img
-            src="/images/priinis.jpg"
+            src="/images/pirinis/priinis-new.webp"
             alt="Pirinis 6 Project"
             className="project-main-image"
           />

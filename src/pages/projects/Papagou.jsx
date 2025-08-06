@@ -36,7 +36,7 @@ const Papagou = () => {
         {/* Üst Bilgi */}
         <div className="project-header">
           <img
-            src="/images/papagou.jpg"
+            src="/images/papagou/papagou-new.webp"
             alt="Papagou Project"
             className="project-main-image"
           />
@@ -103,10 +103,10 @@ const Papagou = () => {
                 <p>{t('home.haveQuestion')}</p>
               </div>
             </a>
-            <a href="mailto:info@rainconstructiongr.com">
+            <a href="mailto:rainconstructiongr@gmail.com">
               <FaEnvelope style={{ color: '#f39c12' }} />
               <div>
-                <strong>info@rainconstructiongr.com</strong>
+                <strong>rainconstructiongr@gmail.com</strong>
                 <p>{t('home.writeEmail')}</p>
               </div>
             </a>

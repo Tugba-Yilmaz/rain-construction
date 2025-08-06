@@ -1,7 +1,16 @@
+// src/components/sliders/PapagouPlansSlider.jsx
 import React from 'react';
 import Slider from 'react-slick';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // 👈 ikonu buradan alıyoruz
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './Sliders.css';
+
+const images = [
+  '/images/papagou/plan1-new.webp',
+  '/images/papagou/plan2-new.webp',
+  '/images/papagou/plan3-new.webp',
+  '/images/papagou/plan4-new.webp',
+  '/images/papagou/plan5-new.webp',
+];
 
 const PrevArrow = ({ onClick }) => (
   <div className="custom-arrow prev" onClick={onClick}>
@@ -15,7 +24,7 @@ const NextArrow = ({ onClick }) => (
   </div>
 );
 
-const PapagouPlansSlider = ({ images }) => {
+const PapagouPlansSlider = () => {
   const settings = {
     dots: true,
     infinite: true,

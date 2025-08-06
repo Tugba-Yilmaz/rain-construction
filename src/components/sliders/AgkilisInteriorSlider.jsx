@@ -4,26 +4,26 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import './Sliders.css'; // CSS dosyası içinde butonlar için stil tanımları
 
 const interiorImages = [
-  '/images/agkilis/1.jpg',
-  '/images/agkilis/2.jpg',
-  '/images/agkilis/3.jpg',
-  '/images/agkilis/4.jpg',
-  '/images/agkilis/5.jpg',
-  '/images/agkilis/6.jpg',
-  '/images/agkilis/7.jpg',
-  '/images/agkilis/8.jpg',
-  '/images/agkilis/9.jpg',
-  '/images/agkilis/10.jpg',
-  '/images/agkilis/11.jpg',
-  '/images/agkilis/12.jpg',
-  '/images/agkilis/13.jpg',
-  '/images/agkilis/14.jpg',
-  '/images/agkilis/15.jpg',
-  '/images/agkilis/16.jpg',
-  '/images/agkilis/17.jpg',
-  '/images/agkilis/18.jpg',
-  '/images/agkilis/19.jpg',
-  '/images/agkilis/20.jpg',
+  '/images/agkilis/1.webp',
+  '/images/agkilis/2.webp',
+  '/images/agkilis/3.webp',
+  '/images/agkilis/4.webp',
+  '/images/agkilis/5.webp',
+  '/images/agkilis/6.webp',
+  '/images/agkilis/7.webp',
+  '/images/agkilis/8.webp',
+  '/images/agkilis/9.webp',
+  '/images/agkilis/10.webp',
+  '/images/agkilis/11.webp',
+  '/images/agkilis/12.webp',
+  '/images/agkilis/13.webp',
+  '/images/agkilis/14.webp',
+  '/images/agkilis/15.webp',
+  '/images/agkilis/16.webp',
+  '/images/agkilis/17.webp',
+  '/images/agkilis/18.webp',
+  '/images/agkilis/19.webp',
+  '/images/agkilis/20.webp',
 ];
 
 // Özel ikon bileşenleri
@@ -36,6 +36,7 @@ const NextArrow = ({ onClick }) => (
 const PrevArrow = ({ onClick }) => (
   <div className="custom-arrow prev" onClick={onClick}>
     <FaArrowLeft />
+
   </div>
 );
 

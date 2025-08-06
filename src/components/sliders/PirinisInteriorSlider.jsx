@@ -5,12 +5,13 @@ import './Sliders.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const images = [
-  '/images/pirinis/interior1.jpg',
-  '/images/pirinis/interior2.jpg',
-  '/images/pirinis/interior3.jpg',
-  '/images/pirinis/interior4.jpg',
-  '/images/pirinis/interior5.jpg',
-  '/images/pirinis/interior6.jpg',
+
+  '/images/pirinis/interior1-new.webp',
+  '/images/pirinis/interior2-new.webp',
+  '/images/pirinis/interior3-new.webp',
+  '/images/pirinis/interior4-new.webp',
+  '/images/pirinis/interior5-new.webp',
+  '/images/pirinis/interior6-new.webp',
 ];
 
 const PrevArrow = ({ onClick }) => (

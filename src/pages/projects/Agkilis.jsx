@@ -2,7 +2,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import './Fotiou.css'; // Aynı stilleri kullanmak için
+import './Fotiou.css'; 
 import AgkilisPlanSlider from '../../components/sliders/AgkilisPlanSlider';
 import AgkilisInteriorSlider from '../../components/sliders/AgkilisInteriorSlider';
 import { useTranslation } from 'react-i18next';
@@ -16,7 +16,7 @@ const Agkilis = () => {
         {/* Header */}
         <div className="project-header">
           <img
-            src="/images/agklis.jpg"
+            src="/images/agkilis/agklis-new.webp"
             alt="Agkilis 56"
             className="project-main-image"
           />

@@ -1,8 +1,21 @@
+// src/components/sliders/PapagouInteriorSlider.jsx
 import React from 'react';
 import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 import './Sliders.css';
+
+const images = [
+  '/images/papagou/papagou-interior1-new.webp',
+  '/images/papagou/papagou-interior2-new.webp',
+  '/images/papagou/papagou-interior3-new.webp',
+  '/images/papagou/papagou-interior4-new.webp',
+  '/images/papagou/papagou-interior5-new.webp',
+  '/images/papagou/papagou-interior6-new.webp',
+  '/images/papagou/papagou-interior7-new.webp',
+  '/images/papagou/papagou-interior8-new.webp',
+  '/images/papagou/papagou-interior9-new.webp',
+];
 
 const PrevArrow = ({ onClick }) => (
   <div className="custom-arrow prev" onClick={onClick}>
@@ -16,21 +29,21 @@ const NextArrow = ({ onClick }) => (
   </div>
 );
 
-const PapagouInteriorSlider = ({ images }) => {
+const PapagouInteriorSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2, // Masaüstünde 2 göster
+    slidesToShow: 2,
     slidesToScroll: 1,
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
     responsive: [
       {
-        breakpoint: 768, // Ekran genişliği 768px ve altıysa
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1, // Mobilde 1 göster
+          slidesToShow: 1,
           slidesToScroll: 1
         }
       }

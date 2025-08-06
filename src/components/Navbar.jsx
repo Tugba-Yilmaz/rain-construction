@@ -52,6 +52,7 @@ function Navbar() {
   </div>
 </div>
 
+
 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
   {t('navbar.contact')}
 </Link>

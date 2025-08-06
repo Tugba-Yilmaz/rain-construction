@@ -6,12 +6,12 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Plan görselleri (public klasöründen)
 const images = [
-  '/images/pirinis/plan1.jpg',
-  '/images/pirinis/plan2.jpg',
-  '/images/pirinis/plan3.jpg',
-  '/images/pirinis/plan4.jpg',
-  '/images/pirinis/plan5.jpg',
-  '/images/pirinis/plan6.jpg',
+'/images/pirinis/plan1-new.webp',
+  '/images/pirinis/plan2-new.webp',
+  '/images/pirinis/plan3-new.webp',
+  '/images/pirinis/plan4-new.webp',
+  '/images/pirinis/plan5-new.webp',
+  '/images/pirinis/plan6-new.webp',
 ];
 
 const PrevArrow = ({ onClick }) => (

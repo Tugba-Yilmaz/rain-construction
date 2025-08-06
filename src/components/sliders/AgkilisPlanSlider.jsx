@@ -3,12 +3,12 @@ import Slider from 'react-slick';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // ikonlar için
 
 const planImages = [
-  '/images/agkilis/ground.png',
-  '/images/agkilis/1st.png',
-  '/images/agkilis/2nd.png',
-  '/images/agkilis/3rd.png',
-  '/images/agkilis/4th.png',
-  '/images/agkilis/5th.png',
+  '/images/agkilis/ground.webp',
+  '/images/agkilis/1st.webp',
+  '/images/agkilis/2nd.webp',
+  '/images/agkilis/3rd.webp',
+  '/images/agkilis/4th.webp',
+  '/images/agkilis/5th.webp',
 ];
 
 // Özel arrow bileşenleri

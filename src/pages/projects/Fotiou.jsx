@@ -16,7 +16,7 @@ const Fotiou = () => {
         {/* Üst bilgi */}
         <div className="project-header">
           <img
-            src="/images/fotiou.jpg"
+            src="/images/fotiou/fotiou-new.webp"
             alt="Fotiou Koritsas 84"
             className="project-main-image"
           />
@@ -92,10 +92,10 @@ const Fotiou = () => {
               </div>
             </a>
 
-            <a href="mailto:info@rainconstructiongr.com">
+            <a href="mailto:rainconstructiongr@gmail.com">
               <FaEnvelope style={{ color: '#f39c12' }} />
               <div>
-                <strong>info@rainconstructiongr.com</strong>
+                <strong>rainconstructiongr@gmail.com</strong>
                 <p>{t('home.writeEmail')}</p>
               </div>
             </a>
@@ -119,4 +119,3 @@ const Fotiou = () => {
 };
 
 export default Fotiou;
-

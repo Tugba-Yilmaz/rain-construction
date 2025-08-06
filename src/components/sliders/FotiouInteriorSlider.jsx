@@ -3,16 +3,18 @@ import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const interiorImages = [
-  '/images/fotiou/fotiou-interior1.jpg',
-  '/images/fotiou/fotiou-interior2.jpg',
-  '/images/fotiou/fotiou-interior3.jpg',
-  '/images/fotiou/fotiou-interior4.jpg',
-  '/images/fotiou/fk14-1.jpg',
-  '/images/fotiou/fk6.jpg',
-  '/images/fotiou/6.jpg',
-  '/images/fotiou/5.jpg',
-  '/images/fotiou/2.jpg',
-  '/images/fotiou/1.jpg',
+
+  '/images/fotiou/fotiou-interior1-new.webp',
+  '/images/fotiou/fotiou-interior2-new.webp',
+  '/images/fotiou/fotiou-interior3-new.webp',
+  '/images/fotiou/fotiou-interior4-new.webp',
+  '/images/fotiou/fk14-1-new.webp',
+  '/images/fotiou/fk6-new.webp',
+  '/images/fotiou/6-new.webp',
+  '/images/fotiou/5-new.webp',
+  '/images/fotiou/2-new.webp',
+  '/images/fotiou/1-new.webp',
+
 ];
 
 // Özel sol buton
