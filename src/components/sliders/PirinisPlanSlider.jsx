@@ -1,17 +1,19 @@
 // src/components/sliders/PirinisPlanSlider.jsx
-import React from 'react';
-import Slider from 'react-slick';
-import './Sliders.css';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React from "react";
+import Slider from "react-slick";
+import "./Sliders.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+import ImageSlide from "../ImageSlide"; // ✅ ortak bileşen
 
 // Plan görselleri (public klasöründen)
 const images = [
-'/images/pirinis/plan1-new.webp',
-  '/images/pirinis/plan2-new.webp',
-  '/images/pirinis/plan3-new.webp',
-  '/images/pirinis/plan4-new.webp',
-  '/images/pirinis/plan5-new.webp',
-  '/images/pirinis/plan6-new.webp',
+  "/images/pirinis/plan1-new.webp",
+  "/images/pirinis/plan2-new.webp",
+  "/images/pirinis/plan3-new.webp",
+  "/images/pirinis/plan4-new.webp",
+  "/images/pirinis/plan5-new.webp",
+  "/images/pirinis/plan6-new.webp",
 ];
 
 const PrevArrow = ({ onClick }) => (
@@ -26,7 +28,7 @@ const NextArrow = ({ onClick }) => (
   </div>
 );
 
-const PirinisPlanSlider = () => {
+export default function PirinisPlanSlider() {
   const settings = {
     dots: true,
     infinite: true,
@@ -44,12 +46,15 @@ const PirinisPlanSlider = () => {
       <Slider {...settings}>
         {images.map((src, index) => (
           <div key={index} className="slider-slide">
-            <img src={src} alt={`Plan ${index + 1}`} className="slider-img" />
+            <ImageSlide
+              src={src}
+              alt={`Plan ${index + 1}`}
+              index={index}
+              images={images} // ✅ Lightbox için tüm dizi
+            />
           </div>
         ))}
       </Slider>
     </div>
   );
-};
-
-export default PirinisPlanSlider;
+}

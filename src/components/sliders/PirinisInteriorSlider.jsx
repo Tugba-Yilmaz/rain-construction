@@ -1,17 +1,18 @@
 // src/components/sliders/PirinisInteriorSlider.jsx
-import React from 'react';
-import Slider from 'react-slick';
-import './Sliders.css';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React from "react";
+import Slider from "react-slick";
+import "./Sliders.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+import ImageSlide from "../ImageSlide"; // ✅ ortak bileşen
 
 const images = [
-
-  '/images/pirinis/interior1-new.webp',
-  '/images/pirinis/interior2-new.webp',
-  '/images/pirinis/interior3-new.webp',
-  '/images/pirinis/interior4-new.webp',
-  '/images/pirinis/interior5-new.webp',
-  '/images/pirinis/interior6-new.webp',
+  "/images/pirinis/interior1-new.webp",
+  "/images/pirinis/interior2-new.webp",
+  "/images/pirinis/interior3-new.webp",
+  "/images/pirinis/interior4-new.webp",
+  "/images/pirinis/interior5-new.webp",
+  "/images/pirinis/interior6-new.webp",
 ];
 
 const PrevArrow = ({ onClick }) => (
@@ -26,7 +27,7 @@ const NextArrow = ({ onClick }) => (
   </div>
 );
 
-const PirinisInteriorSlider = () => {
+export default function PirinisInteriorSlider() {
   const settings = {
     dots: true,
     infinite: true,
@@ -38,13 +39,10 @@ const PirinisInteriorSlider = () => {
     nextArrow: <NextArrow />,
     responsive: [
       {
-        breakpoint: 768, // Ekran genişliği 768px ve altıysa
-        settings: {
-          slidesToShow: 1, // 1 görsel göster
-          slidesToScroll: 1
-        }
-      }
-    ]
+        breakpoint: 768, // Mobilde 1 göster
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+    ],
   };
 
   return (
@@ -53,13 +51,15 @@ const PirinisInteriorSlider = () => {
       <Slider {...settings}>
         {images.map((src, index) => (
           <div key={index} className="slider-slide">
-            <img src={src} alt={`Interior ${index + 1}`} className="slider-img" />
+            <ImageSlide
+              src={src}
+              alt={`Interior ${index + 1}`}
+              index={index}
+              images={images} // ✅ Lightbox için tüm dizi
+            />
           </div>
         ))}
       </Slider>
     </div>
   );
-};
-
-
-export default PirinisInteriorSlider;
+}

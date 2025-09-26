@@ -1,36 +1,35 @@
-import React from 'react';
-import Slider from 'react-slick';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // ikonlar için
+// src/components/sliders/AgkilisPlanSlider.jsx
+import React from "react";
+import Slider from "react-slick";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+// (opsiyonel) ortak slider stillerin varsa aç:
+import "./Sliders.css";
+
+import ImageSlide from "../ImageSlide"; // sliders klasöründen bir seviye yukarı
 
 const planImages = [
-  '/images/agkilis/ground.webp',
-  '/images/agkilis/1st.webp',
-  '/images/agkilis/2nd.webp',
-  '/images/agkilis/3rd.webp',
-  '/images/agkilis/4th.webp',
-  '/images/agkilis/5th.webp',
+  "/images/agkilis/ground.webp",
+  "/images/agkilis/1st.webp",
+  "/images/agkilis/2nd.webp",
+  "/images/agkilis/3rd.webp",
+  "/images/agkilis/4th.webp",
+  "/images/agkilis/5th.webp",
 ];
 
-// Özel arrow bileşenleri
-const NextArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div className="custom-arrow next" onClick={onClick}>
-      <FaArrowRight />
-    </div>
-  );
-};
+// Özel ok bileşenleri
+const NextArrow = ({ onClick }) => (
+  <div className="custom-arrow next" onClick={onClick}>
+    <FaArrowRight />
+  </div>
+);
 
-const PrevArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div className="custom-arrow prev" onClick={onClick}>
-      <FaArrowLeft />
-    </div>
-  );
-};
+const PrevArrow = ({ onClick }) => (
+  <div className="custom-arrow prev" onClick={onClick}>
+    <FaArrowLeft />
+  </div>
+);
 
-const AgkilisPlanSlider = () => {
+export default function AgkilisPlanSlider() {
   const settings = {
     dots: true,
     infinite: true,
@@ -44,16 +43,20 @@ const AgkilisPlanSlider = () => {
 
   return (
     <div className="slider-container">
-      <h3 style={{ textAlign: 'center', marginBottom: '1rem' }}>Apartment Plans</h3>
+      <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>Apartment Plans</h3>
+
       <Slider {...settings}>
         {planImages.map((src, index) => (
           <div key={index}>
-            <img src={src} alt={`Plan ${index + 1}`} style={{ width: '100%', borderRadius: '8px' }} />
+            <ImageSlide
+              src={src}
+              alt={`Plan ${index + 1}`}
+              index={index}
+              images={planImages}   // ✅ Lightbox için tüm dizi
+            />
           </div>
         ))}
       </Slider>
     </div>
   );
-};
-
-export default AgkilisPlanSlider;
+}

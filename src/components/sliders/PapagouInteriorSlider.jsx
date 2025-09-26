@@ -1,20 +1,21 @@
 // src/components/sliders/PapagouInteriorSlider.jsx
-import React from 'react';
-import Slider from 'react-slick';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React from "react";
+import Slider from "react-slick";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-import './Sliders.css';
+import "./Sliders.css";
+import ImageSlide from "../ImageSlide"; // ✅ ortak bileşen
 
 const images = [
-  '/images/papagou/papagou-interior1-new.webp',
-  '/images/papagou/papagou-interior2-new.webp',
-  '/images/papagou/papagou-interior3-new.webp',
-  '/images/papagou/papagou-interior4-new.webp',
-  '/images/papagou/papagou-interior5-new.webp',
-  '/images/papagou/papagou-interior6-new.webp',
-  '/images/papagou/papagou-interior7-new.webp',
-  '/images/papagou/papagou-interior8-new.webp',
-  '/images/papagou/papagou-interior9-new.webp',
+  "/images/papagou/papagou-interior1-new.webp",
+  "/images/papagou/papagou-interior2-new.webp",
+  "/images/papagou/papagou-interior3-new.webp",
+  "/images/papagou/papagou-interior4-new.webp",
+  "/images/papagou/papagou-interior5-new.webp",
+  "/images/papagou/papagou-interior6-new.webp",
+  "/images/papagou/papagou-interior7-new.webp",
+  "/images/papagou/papagou-interior8-new.webp",
+  "/images/papagou/papagou-interior9-new.webp",
 ];
 
 const PrevArrow = ({ onClick }) => (
@@ -29,7 +30,7 @@ const NextArrow = ({ onClick }) => (
   </div>
 );
 
-const PapagouInteriorSlider = () => {
+export default function PapagouInteriorSlider() {
   const settings = {
     dots: true,
     infinite: true,
@@ -42,26 +43,26 @@ const PapagouInteriorSlider = () => {
     responsive: [
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+    ],
   };
 
   return (
     <div className="slider-wrapper">
       <h2 className="slider-title">Interior Designs</h2>
       <Slider {...settings}>
-        {images.map((img, i) => (
+        {images.map((src, i) => (
           <div key={i} className="slider-slide">
-            <img src={img} alt={`Interior ${i + 1}`} className="slider-img" />
+            <ImageSlide
+              src={src}
+              alt={`Interior ${i + 1}`}
+              index={i}
+              images={images} // ✅ Lightbox için tüm array
+            />
           </div>
         ))}
       </Slider>
     </div>
   );
-};
-
-export default PapagouInteriorSlider;
+}
