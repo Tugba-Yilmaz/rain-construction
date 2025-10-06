@@ -6,7 +6,7 @@
   color: #222;
 }
 
-/* Başlık */
+/* Sayfa genel başlıkları (merkez) */
 .project-detail-container h2 {
   text-align: center;
   font-size: 2rem;
@@ -14,7 +14,6 @@
   margin-bottom: 0.5rem;
   color: #666;
 }
-
 .project-detail-container h3 {
   text-align: center;
   font-size: 1.5rem;
@@ -23,65 +22,82 @@
   margin-bottom: 2rem;
 }
 
-/* Proje başlığı ve görseli */
+/* ÜST BÖLÜM: Resim + Açıklama */
 .project-header {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(320px, 480px) 1fr; /* solda sabit, sağda esnek */
   gap: 2rem;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: stretch; /* iki kolon aynı yükseklik */
+  margin-top: 1rem;
 }
 
+/* Görsel sarmalayıcı */
+.project-image-wrap {
+  height: 100%;                    /* ✅ sağ kolonun yüksekliği kadar uzamasın */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: none;
+  background: none;
+  overflow: hidden;
+}
+
+/* Sol: Ana görsel */
 .project-main-image {
   width: 100%;
-  max-width: 500px;
-  border-radius: 8px;
   height: auto;
+  object-fit: cover;             /* ✅ kırpmadan tamamını göster */
+  
+  border-radius: 8px;                /* radius wrapper’da */
+ 
 }
 
-/* Açıklama alanı */
+/* Sağ: Açıklama alanı */
 .project-description {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
-  line-height: 1.7;
-  font-size: 1rem;
-  max-width: 900px;
-  flex: 1;
+  line-height: 1.45;       /* ✅ satır yüksekliğini küçülttük */
+  font-size: 0.95rem;      /* ✅ biraz daha kompakt */
+  max-width: 760px;        /* okunurluk */
   min-width: 300px;
-  padding: 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
   text-align: left;
 }
 
-.project-description .paragraph {
-  margin-bottom: 1rem;
+/* Açıklama içi başlıklar solda */
+.project-description h2,
+.project-description h3 {
+  text-align: left;
+  margin-top: 0;
 }
 
-/* Alt başlıklar */
 .project-description h4 {
   font-size: 1.3rem;
   font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
+  margin: 1.2rem 0 0.6rem;
   color: #111;
   font-family: 'Georgia', serif;
 }
 
+/* Listeler */
 .project-description ul {
   list-style: none;
   padding: 0;
   text-align: left;
   display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   max-width: 100%;
 }
+.project-description ul li { margin-bottom: 0.4rem; }
+.project-description strong { font-weight: 600; }
 
-.project-description ul li {
-  margin-bottom: 0.5rem;
+/* Özellik listelerini iki sütun yap → satırları azaltır */
+.project-description ul:nth-of-type(2) {
+  columns: 2;
+  column-gap: 2rem;
 }
-
-.project-description strong {
-  font-weight: 600;
-}
+.project-description ul:nth-of-type(2) li { break-inside: avoid; }
 
 /* Özellik kutuları */
 .project-stats {
@@ -94,31 +110,12 @@
   flex-wrap: wrap;
   margin-top: 2rem;
 }
+.stat-item { display: flex; align-items: center; gap: 0.8rem; min-width: 160px; }
+.stat-item img { height: 40px; width: 40px; object-fit: contain; }
+.stat-item .value { font-size: 1.4rem; font-weight: 600; }
+.stat-item div { font-size: 0.9rem; color: #333; }
 
-.stat-item {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  min-width: 160px;
-}
-
-.stat-item img {
-  height: 40px;
-  width: 40px;
-  object-fit: contain;
-}
-
-.stat-item .value {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-.stat-item div {
-  font-size: 0.9rem;
-  color: #333;
-}
-
-/* Harita ve iletişim kutusu */
+/* Harita ve iletişim */
 .contact-map-section {
   display: flex;
   justify-content: center;
@@ -128,11 +125,7 @@
   flex-wrap: wrap;
   background-color: #f9f9f9;
 }
-
-.map-box {
-  flex: 1 1 600px;
-}
-
+.map-box { flex: 1 1 600px; }
 .map-box iframe {
   border: 0;
   border-radius: 8px;
@@ -140,14 +133,13 @@
   height: 300px;
 }
 
-/* İletişim bilgileri */
+/* İletişim */
 .contact-info {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   font-size: 1rem;
 }
-
 .contact-info a {
   color: #222;
   text-decoration: none;
@@ -156,27 +148,17 @@
   align-items: center;
   gap: 0.7rem;
 }
+.contact-info a:hover { color: #f39c12; text-decoration: underline; }
 
-.contact-info a:hover {
-  color: #f39c12;
-  text-decoration: underline;
-}
-
-/* --- Responsive Tasarım --- */
+/* --- Responsive --- */
 @media (max-width: 768px) {
-  .project-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .project-main-image {
-    width: 100%;
-    max-width: 100%;
-  }
+  .project-header { grid-template-columns: 1fr; }
+  .project-main-image { width: 100%; height: auto; object-fit: contain; }
 
   .project-description {
+    max-width: 100%;
     padding: 0 1rem;
+    text-align: left;
   }
 
   .project-stats {
@@ -197,7 +179,19 @@
     text-align: center;
   }
 
-  .map-box iframe {
-    height: 250px;
-  }
+  .map-box iframe { height: 250px; }
+}
+
+/* Key Location Benefits listesi yan yana */
+.project-description ul.location-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+  gap: 0.8rem 2rem; /* satır ve sütun boşluğu */
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.project-description ul.location-benefits li {
+  margin: 0;
 }

@@ -7,12 +7,14 @@ import "./Sliders.css";
 import ImageSlide from "../ImageSlide"; // ✅ ortak bileşen
 
 const planImages = [
-  "/images/fotiou/fotiou-plan1-new.webp",
-  "/images/fotiou/fotiou-plan2-new.webp",
-  "/images/fotiou/fotiou-plan3-new.webp",
-  "/images/fotiou/fotiou-plan4-new.webp",
-  "/images/fotiou/fotiou-plan5-new.webp",
-  "/images/fotiou/fotiou-plan6-new.webp",
+  "/images/fotiou/1ST FLOOR-FOTIOU.png",
+  "/images/fotiou/2ND FLOOR-FOTIOU.png",
+  "/images/fotiou/3RD FLOOR-FOTIOU.png",
+  "/images/fotiou/4TH FLOOR-FOTIOU.png",
+  "/images/fotiou/5TH FLOOR-FOTIOU.png",
+  "/images/fotiou/6TH FLOOR-FOTIOU.png",
+  
+  //"/images/fotiou/fotiou-plan6-new.webp",
 ];
 
 // Özel sol buton
@@ -54,19 +56,25 @@ const NextArrow = ({ onClick }) => (
 );
 
 export default function FotiouPlanSlider() {
-  const settings = {
+ const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: <PrevArrow />,
+    centerMode: false,
+    centerPadding: '0',
+    variableWidth: false,
+    adaptiveHeight: true,
+    mobileFirst: true,
+    arrows: true,
     nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
     <div
-      className="slider-container"
+      className="slider-container plan-slider"
       style={{ marginTop: "3rem", position: "relative" }}
     >
       <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>
@@ -75,12 +83,16 @@ export default function FotiouPlanSlider() {
       <Slider {...settings}>
         {planImages.map((src, index) => (
           <div key={index}>
+            <div className="slide-inner">
+               <div className="plan-frame"> 
             <ImageSlide
               src={src}
               alt={`Plan ${index + 1}`}
               index={index}
               images={planImages} // ✅ Lightbox için tüm dizi
             />
+            </div>
+            </div>
           </div>
         ))}
       </Slider>

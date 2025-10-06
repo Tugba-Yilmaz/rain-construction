@@ -1,11 +1,10 @@
 // src/components/sliders/PapagouInteriorSlider.jsx
 import React from "react";
 import Slider from "react-slick";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
 import "./Sliders.css";
-import ImageSlide from "../ImageSlide"; // ✅ ortak bileşen
+import ImageSlide from "../ImageSlide";
 
+// Görseller
 const images = [
   "/images/papagou/papagou-interior1-new.webp",
   "/images/papagou/papagou-interior2-new.webp",
@@ -18,16 +17,22 @@ const images = [
   "/images/papagou/papagou-interior9-new.webp",
 ];
 
-const PrevArrow = ({ onClick }) => (
-  <div className="custom-arrow prev" onClick={onClick}>
-    <FaChevronLeft />
-  </div>
+// Ok bileşenleri — Slick prop'larını DEVRAL!
+const NextArrow = ({ className, style, onClick }) => (
+  <button
+    className={`${className || ""} custom-arrow is-next`.trim()}
+    style={{ ...style }}
+    onClick={onClick}
+    aria-label="Next"
+  />
 );
-
-const NextArrow = ({ onClick }) => (
-  <div className="custom-arrow next" onClick={onClick}>
-    <FaChevronRight />
-  </div>
+const PrevArrow = ({ className, style, onClick }) => (
+  <button
+    className={`${className || ""} custom-arrow is-prev`.trim()}
+    style={{ ...style }}
+    onClick={onClick}
+    aria-label="Previous"
+  />
 );
 
 export default function PapagouInteriorSlider() {
@@ -35,31 +40,36 @@ export default function PapagouInteriorSlider() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 2,                  // bu slider için 2
     slidesToScroll: 1,
+    centerMode: false,
+    centerPadding: "0",
+    variableWidth: false,
+    adaptiveHeight: true,
+    mobileFirst: true,
     arrows: true,
-    prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 1, slidesToScroll: 1 },
-      },
+      { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   };
 
   return (
-    <div className="slider-wrapper">
-      <h2 className="slider-title">Interior Designs</h2>
+    <div className="slider-container interior-slider" style={{ marginTop: "3rem" }}>
+      <h3 className="slider-title">INTERIOR DESIGNS</h3>
+
       <Slider {...settings}>
         {images.map((src, i) => (
-          <div key={i} className="slider-slide">
-            <ImageSlide
-              src={src}
-              alt={`Interior ${i + 1}`}
-              index={i}
-              images={images} // ✅ Lightbox için tüm array
-            />
+          <div key={i}>
+            <div className="slide-inner">
+              <ImageSlide
+                src={src}
+                alt={`Interior ${i + 1}`}
+                index={i}
+                images={images}
+              />
+            </div>
           </div>
         ))}
       </Slider>

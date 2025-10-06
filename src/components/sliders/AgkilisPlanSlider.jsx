@@ -17,43 +17,64 @@ const planImages = [
 ];
 
 // Özel ok bileşenleri
-const NextArrow = ({ onClick }) => (
-  <div className="custom-arrow next" onClick={onClick}>
-    <FaArrowRight />
-  </div>
-);
+// Özel ok bileşenleri (prop devralma + sınıfları birleştirme)
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <button
+      className={`${className || ''} custom-arrow is-next`.trim()}
+      style={{ ...style }}
+      onClick={onClick}
+      aria-label="Next"
+    />
+  );
+};
 
-const PrevArrow = ({ onClick }) => (
-  <div className="custom-arrow prev" onClick={onClick}>
-    <FaArrowLeft />
-  </div>
-);
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <button
+      className={`${className || ''} custom-arrow is-prev`.trim()}
+      style={{ ...style }}
+      onClick={onClick}
+      aria-label="Previous"
+    />
+  );
+};
 
 export default function AgkilisPlanSlider() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-  };
+ const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  centerMode: false,
+  centerPadding: '0',
+  variableWidth: false,
+  adaptiveHeight: true,
+  mobileFirst: true,
+  arrows: true,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />
+};
+
 
   return (
-    <div className="slider-container">
+    <div className="slider-container plan-slider">
       <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>Apartment Plans</h3>
 
       <Slider {...settings}>
         {planImages.map((src, index) => (
-          <div key={index}>
+          <div key={index} className="plan-slider">
+            <div className="plan-frame" > 
             <ImageSlide
               src={src}
               alt={`Plan ${index + 1}`}
               index={index}
               images={planImages}   // ✅ Lightbox için tüm dizi
             />
+            </div>
           </div>
         ))}
       </Slider>

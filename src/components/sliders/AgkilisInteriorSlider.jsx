@@ -50,6 +50,11 @@ const AgkilisInteriorSlider = () => {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
+     centerMode: false,
+  centerPadding: '0',
+  variableWidth: false,
+  adaptiveHeight: true,
+  mobileFirst: true,
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -68,18 +73,20 @@ const AgkilisInteriorSlider = () => {
   ];
 
   return (
-    <div className="slider-container">
+    <div className="slider-container interior-slider">
       <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>Interior Design</h3>
 
       <Slider {...settings}>
         {interiorImages.map((src, index) => (
           <div key={index}>
+             <div className="slide-inner">
             <ImageSlide
               src={src}
               alt={`Interior ${index + 1}`}
               index={index}
               images={interiorImages} // ✅ lightbox için tüm dizi
             />
+            </div>
           </div>
         ))}
       </Slider>

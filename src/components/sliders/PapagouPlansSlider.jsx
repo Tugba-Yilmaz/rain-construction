@@ -1,10 +1,8 @@
 // src/components/sliders/PapagouPlansSlider.jsx
 import React from "react";
 import Slider from "react-slick";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./Sliders.css";
-
-import ImageSlide from "../ImageSlide"; // ✅ ortak bileşen
+import ImageSlide from "../ImageSlide";
 
 const images = [
   "/images/papagou/plan1-new.webp",
@@ -14,42 +12,58 @@ const images = [
   "/images/papagou/plan5-new.webp",
 ];
 
-const PrevArrow = ({ onClick }) => (
-  <div className="custom-arrow prev" onClick={onClick}>
-    <FaChevronLeft />
-  </div>
+// Ok bileşenleri — Slick prop'larını DEVRAL!
+const NextArrow = ({ className, style, onClick }) => (
+  <button
+    className={`${className || ""} custom-arrow is-next`.trim()}
+    style={{ ...style }}
+    onClick={onClick}
+    aria-label="Next"
+  />
 );
-
-const NextArrow = ({ onClick }) => (
-  <div className="custom-arrow next" onClick={onClick}>
-    <FaChevronRight />
-  </div>
+const PrevArrow = ({ className, style, onClick }) => (
+  <button
+    className={`${className || ""} custom-arrow is-prev`.trim()}
+    style={{ ...style }}
+    onClick={onClick}
+    aria-label="Previous"
+  />
 );
 
 export default function PapagouPlansSlider() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    centerMode: false,
+    centerPadding: "0",
+    variableWidth: false,
+    adaptiveHeight: true,
+    mobileFirst: true,
     arrows: true,
-    prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
-    <div className="slider-wrapper">
-      <h2 className="slider-title">Apartment Plans</h2>
+    <div className="slider-container plan-slider" style={{ marginTop: "3rem" }}>
+      <h3 className="slider-title">Apartment Plans</h3>
+
       <Slider {...settings}>
         {images.map((src, i) => (
-          <div key={i} className="slider-slide">
-            <ImageSlide
-              src={src}
-              alt={`Plan ${i + 1}`}
-              index={i}
-              images={images} // ✅ Lightbox için tüm dizi
-            />
+          <div key={i}>
+            <div className="slide-inner">
+              <div className="plan-frame">
+                <ImageSlide
+                  src={src}
+                  alt={`Plan ${i + 1}`}
+                  index={i}
+                  images={images}
+                />
+              </div>
+            </div>
           </div>
         ))}
       </Slider>

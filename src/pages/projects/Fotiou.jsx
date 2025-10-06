@@ -15,11 +15,13 @@ const Fotiou = () => {
       <div className="project-detail-container">
         {/* Üst bilgi */}
         <div className="project-header">
+          <div className="project-image-wrap">
           <img
             src="/images/fotiou/fotiou-new.webp"
             alt="Fotiou Koritsas 84"
             className="project-main-image"
           />
+          </div>
           <div className="project-description">
             <h2>{t('fotiou.title')}</h2>
             <h3>{t('fotiou.subtitle')}</h3>
@@ -31,7 +33,7 @@ const Fotiou = () => {
             <p>{t('fotiou.area2')}</p>
 
             <h4>{t('fotiou.locationTitle')}</h4>
-            <ul>
+            <ul  className="location-benefits">
               <li><strong>{t('fotiou.metro')}</strong> 550 meters</li>
               <li><strong>{t('fotiou.airport')}</strong> 35 km</li>
               <li><strong>{t('fotiou.port')}</strong> 1.5 km</li>

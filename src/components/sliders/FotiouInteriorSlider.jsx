@@ -19,73 +19,69 @@ const interiorImages = [
   "/images/fotiou/1-new.webp",
 ];
 
-// Özel sol buton
+
 const PrevArrow = ({ onClick }) => (
   <button
-    onClick={onClick}
-    style={{
-      position: "absolute",
-      left: "-25px",
-      top: "50%",
-      transform: "translateY(-50%)",
-      background: "none",
-      border: "none",
-      cursor: "pointer",
-      zIndex: 1,
+    type="button"
+    className="custom-arrow prev"
+    aria-label="Previous"
+    onClick={(e) => {
+      e.stopPropagation();
+      onClick?.(e);
     }}
   >
-    <FaChevronLeft size={24} color="#333" />
+    <FaChevronLeft size={20} />
   </button>
 );
 
-// Özel sağ buton
 const NextArrow = ({ onClick }) => (
   <button
-    onClick={onClick}
-    style={{
-      position: "absolute",
-      right: "-25px",
-      top: "50%",
-      transform: "translateY(-50%)",
-      background: "none",
-      border: "none",
-      cursor: "pointer",
-      zIndex: 1,
+    type="button"
+    className="custom-arrow next"
+    aria-label="Next"
+    onClick={(e) => {
+      e.stopPropagation();
+      onClick?.(e);
     }}
   >
-    <FaChevronRight size={24} color="#333" />
+    <FaChevronRight size={20} />
   </button>
 );
 
 export default function FotiouInteriorSlider() {
-  const settings = {
+ const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2, // Masaüstünde 2
+    slidesToShow: 2,               // bu slider için 2 ise bırak
     slidesToScroll: 1,
-    prevArrow: <PrevArrow />,
+    centerMode: false,
+    centerPadding: '0',
+    variableWidth: false,
+    adaptiveHeight: true,
+    mobileFirst: true,
+    arrows: true,
     nextArrow: <NextArrow />,
-    responsive: [
-      {
-        breakpoint: 768, // Mobil için
-        settings: { slidesToShow: 1, slidesToScroll: 1 },
-      },
-    ],
+    prevArrow: <PrevArrow />,
+    responsive: [{ breakpoint: 768, settings: { slidesToShow: 1 } }],
   };
 
   return (
-    <div className="slider-container" style={{ marginTop: "3rem", position: "relative" }}>
-      <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>Interior Design</h3>
+    // 🔹 interior-slider: sadece bu slider'ı hedefleyen scope sınıfı
+    <div className="slider-container interior-slider" style={{ marginTop: "3rem", position: "relative" }}>
+      <h3 className="slider-title" style={{ marginBottom: "1rem" }}>Interior Design</h3>
+
       <Slider {...settings}>
         {interiorImages.map((src, index) => (
           <div key={index}>
+             <div className="slide-inner">
             <ImageSlide
               src={src}
               alt={`Interior ${index + 1}`}
               index={index}
-              images={interiorImages} // ✅ Lightbox için gerekli
+              images={interiorImages}   // ✅ Lightbox için gerekli dizi
             />
+            </div>
           </div>
         ))}
       </Slider>
