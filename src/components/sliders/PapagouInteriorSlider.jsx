@@ -1,10 +1,10 @@
-// src/components/sliders/PapagouInteriorSlider.jsx
 import React from "react";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next"; // 🔹 çeviri eklendi
 import "./Sliders.css";
 import ImageSlide from "../ImageSlide";
 
-// Görseller
+// 🔹 Görseller
 const images = [
   "/images/papagou/papagou-interior1-new.webp",
   "/images/papagou/papagou-interior2-new.webp",
@@ -17,7 +17,7 @@ const images = [
   "/images/papagou/papagou-interior9-new.webp",
 ];
 
-// Ok bileşenleri — Slick prop'larını DEVRAL!
+// 🔹 Ok bileşenleri — Slick prop'larını devralır
 const NextArrow = ({ className, style, onClick }) => (
   <button
     className={`${className || ""} custom-arrow is-next`.trim()}
@@ -26,6 +26,7 @@ const NextArrow = ({ className, style, onClick }) => (
     aria-label="Next"
   />
 );
+
 const PrevArrow = ({ className, style, onClick }) => (
   <button
     className={`${className || ""} custom-arrow is-prev`.trim()}
@@ -36,11 +37,13 @@ const PrevArrow = ({ className, style, onClick }) => (
 );
 
 export default function PapagouInteriorSlider() {
+  const { t } = useTranslation(); // 🔹 i18n hook
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,                  // bu slider için 2
+    slidesToShow: 2, // bu slider için 2 ise bırak
     slidesToScroll: 1,
     centerMode: false,
     centerPadding: "0",
@@ -56,8 +59,14 @@ export default function PapagouInteriorSlider() {
   };
 
   return (
-    <div className="slider-container interior-slider" style={{ marginTop: "3rem" }}>
-      <h3 className="slider-title">INTERIOR DESIGNS</h3>
+    <div
+      className="slider-container interior-slider"
+      style={{ marginTop: "3rem" }}
+    >
+      {/* 🔹 Başlık çok dilli hale getirildi */}
+      <h3 className="slider-title" style={{ textAlign: "center", marginBottom: "1rem" }}>
+        {t("sections.interiorDesign")}
+      </h3>
 
       <Slider {...settings}>
         {images.map((src, i) => (

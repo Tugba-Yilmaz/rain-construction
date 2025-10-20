@@ -1,12 +1,11 @@
-// src/components/sliders/AgkilisInteriorSlider.jsx
 import React from "react";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import "./Sliders.css";
 
-import ImageSlide from "../ImageSlide"; // ✅ Ortak slide bileşeni
+import ImageSlide from "../ImageSlide";
 
-// Tüm görseller tek dizide
 const interiorImages = [
   "/images/agkilis/1.webp",
   "/images/agkilis/2.webp",
@@ -30,7 +29,6 @@ const interiorImages = [
   "/images/agkilis/20.webp",
 ];
 
-// Slick özel ok bileşenleri
 const NextArrow = ({ onClick }) => (
   <div className="custom-arrow next" onClick={onClick}>
     <FaArrowRight />
@@ -44,66 +42,68 @@ const PrevArrow = ({ onClick }) => (
 );
 
 const AgkilisInteriorSlider = () => {
+  const { t } = useTranslation();
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-     centerMode: false,
-  centerPadding: '0',
-  variableWidth: false,
-  adaptiveHeight: true,
-  mobileFirst: true,
+    centerMode: false,
+    centerPadding: "0",
+    variableWidth: false,
+    adaptiveHeight: true,
+    mobileFirst: true,
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    responsive: [
-      { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-    ],
+    responsive: [{ breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } }],
   };
 
+  // etiketleri i18n anahtarlarıyla eşle
   const renderLinks = [
-    { label: "3D Render - Ground Floor", url: "/videos/Ground Floor Agkilis-Video.mp4" },
-    { label: "3D Render - 1&2 Floor - A Studio", url: "/videos/Agkilis 1 floor-A studio Video.mp4" },
-    { label: "3D Render - 1&2 Floor - B", url: "/videos/agkilis 1floor-B Video.mp4" },
-    { label: "3D Render - 1&2 Floor - C", url: "/videos/agkilis 1floor C– Video.mp4" },
-    { label: "3D Render - 3-4-5 Floor - A", url: "/videos/Agkilis 3 Floor - A-Video.mp4" },
-    { label: "3D Render - 3-4-5 Floor - B", url: "/videos/agkilis 3 floor-B Video.mp4" },
+    { key: "ground",        url: "/videos/Ground Floor Agkilis-Video.mp4" },
+    { key: "floor12AStudio", url: "/videos/Agkilis 1 floor-A studio Video.mp4" },
+    { key: "floor12B",       url: "/videos/agkilis 1floor-B Video.mp4" },
+    { key: "floor12C",       url: "/videos/agkilis 1floor C– Video.mp4" },
+    { key: "floor345A",      url: "/videos/Agkilis 3 Floor - A-Video.mp4" },
+    { key: "floor345B",      url: "/videos/agkilis 3 floor-B Video.mp4" }
   ];
 
   return (
     <div className="slider-container interior-slider">
-      <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>Interior Design</h3>
+      <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>
+        {t("sections.interiorDesign")}
+      </h3>
 
       <Slider {...settings}>
         {interiorImages.map((src, index) => (
           <div key={index}>
-             <div className="slide-inner">
-            <ImageSlide
-              src={src}
-              alt={`Interior ${index + 1}`}
-              index={index}
-              images={interiorImages} // ✅ lightbox için tüm dizi
-            />
+            <div className="slide-inner">
+              <ImageSlide
+                src={src}
+                alt={`Interior ${index + 1}`}
+                index={index}
+                images={interiorImages}
+              />
             </div>
           </div>
         ))}
       </Slider>
 
-      {/* 3D Render Butonları */}
       <div className="render-links-container">
-        <h3>3D Render Videos</h3>
+        <h3>{t("sections.renderVideos")}</h3>
         <div className="render-button-wrapper">
-          {renderLinks.map((item, i) => (
+          {renderLinks.map((item) => (
             <a
-              key={i}
+              key={item.key}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
               className="render-button"
             >
-              ▶ {item.label}
+              ▶ {t(`videos.${item.key}`)}
             </a>
           ))}
         </div>

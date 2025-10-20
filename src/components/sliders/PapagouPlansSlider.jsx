@@ -1,6 +1,7 @@
 // src/components/sliders/PapagouPlansSlider.jsx
 import React from "react";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next"; // 🔹 eklendi
 import "./Sliders.css";
 import ImageSlide from "../ImageSlide";
 
@@ -31,6 +32,8 @@ const PrevArrow = ({ className, style, onClick }) => (
 );
 
 export default function PapagouPlansSlider() {
+  const { t } = useTranslation(); // 🔹 i18n hook
+
   const settings = {
     dots: true,
     infinite: true,
@@ -49,7 +52,10 @@ export default function PapagouPlansSlider() {
 
   return (
     <div className="slider-container plan-slider" style={{ marginTop: "3rem" }}>
-      <h3 className="slider-title">Apartment Plans</h3>
+      {/* 🔹 Başlık çok dilli */}
+      <h3 className="slider-title" style={{ textAlign: "center", marginBottom: "1rem" }}>
+        {t("sections.apartmentPlans")}
+      </h3>
 
       <Slider {...settings}>
         {images.map((src, i) => (

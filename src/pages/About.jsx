@@ -24,7 +24,7 @@ function About() {
           }}
         >
           <img
-            src="/images/rain-logo.jpg"
+            src="/images/rain-logo2.png"
             alt="Rain Construction Logo"
             style={{ width: '200px', height: '200px', objectFit: 'contain' }}
           />

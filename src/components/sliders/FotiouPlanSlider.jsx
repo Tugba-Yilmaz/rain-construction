@@ -1,7 +1,7 @@
-// src/components/sliders/FotiouPlanSlider.jsx
 import React from "react";
 import Slider from "react-slick";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslation } from "react-i18next"; // 🔹 eklendi
 import "./Sliders.css";
 
 import ImageSlide from "../ImageSlide"; // ✅ ortak bileşen
@@ -13,11 +13,9 @@ const planImages = [
   "/images/fotiou/4TH FLOOR-FOTIOU.png",
   "/images/fotiou/5TH FLOOR-FOTIOU.png",
   "/images/fotiou/6TH FLOOR-FOTIOU.png",
-  
-  //"/images/fotiou/fotiou-plan6-new.webp",
 ];
 
-// Özel sol buton
+// 🔹 Özel sol buton
 const PrevArrow = ({ onClick }) => (
   <button
     onClick={onClick}
@@ -31,12 +29,13 @@ const PrevArrow = ({ onClick }) => (
       cursor: "pointer",
       zIndex: 1,
     }}
+    aria-label="Previous"
   >
     <FaChevronLeft size={24} color="#333" />
   </button>
 );
 
-// Özel sağ buton
+// 🔹 Özel sağ buton
 const NextArrow = ({ onClick }) => (
   <button
     onClick={onClick}
@@ -50,20 +49,23 @@ const NextArrow = ({ onClick }) => (
       cursor: "pointer",
       zIndex: 1,
     }}
+    aria-label="Next"
   >
     <FaChevronRight size={24} color="#333" />
   </button>
 );
 
 export default function FotiouPlanSlider() {
- const settings = {
+  const { t } = useTranslation(); // 🔹 çeviri hook
+
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: false,
-    centerPadding: '0',
+    centerPadding: "0",
     variableWidth: false,
     adaptiveHeight: true,
     mobileFirst: true,
@@ -77,21 +79,23 @@ export default function FotiouPlanSlider() {
       className="slider-container plan-slider"
       style={{ marginTop: "3rem", position: "relative" }}
     >
+      {/* 🔹 Başlık artık çok dilli */}
       <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>
-        Apartment Plans
+        {t("sections.apartmentPlans")}
       </h3>
+
       <Slider {...settings}>
         {planImages.map((src, index) => (
           <div key={index}>
             <div className="slide-inner">
-               <div className="plan-frame"> 
-            <ImageSlide
-              src={src}
-              alt={`Plan ${index + 1}`}
-              index={index}
-              images={planImages} // ✅ Lightbox için tüm dizi
-            />
-            </div>
+              <div className="plan-frame">
+                <ImageSlide
+                  src={src}
+                  alt={`Plan ${index + 1}`}
+                  index={index}
+                  images={planImages} // ✅ Lightbox için tüm dizi
+                />
+              </div>
             </div>
           </div>
         ))}

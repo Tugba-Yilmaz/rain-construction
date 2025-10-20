@@ -2,6 +2,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslation } from "react-i18next"; // 🔹 eklendi
 import "./Sliders.css";
 
 import ImageSlide from "../ImageSlide"; // ✅ Ortak bileşen
@@ -18,7 +19,6 @@ const interiorImages = [
   "/images/fotiou/2-new.webp",
   "/images/fotiou/1-new.webp",
 ];
-
 
 const PrevArrow = ({ onClick }) => (
   <button
@@ -49,14 +49,16 @@ const NextArrow = ({ onClick }) => (
 );
 
 export default function FotiouInteriorSlider() {
- const settings = {
+  const { t } = useTranslation(); // 🔹 i18n hook
+
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 2,               // bu slider için 2 ise bırak
     slidesToScroll: 1,
     centerMode: false,
-    centerPadding: '0',
+    centerPadding: "0",
     variableWidth: false,
     adaptiveHeight: true,
     mobileFirst: true,
@@ -67,20 +69,22 @@ export default function FotiouInteriorSlider() {
   };
 
   return (
-    // 🔹 interior-slider: sadece bu slider'ı hedefleyen scope sınıfı
     <div className="slider-container interior-slider" style={{ marginTop: "3rem", position: "relative" }}>
-      <h3 className="slider-title" style={{ marginBottom: "1rem" }}>Interior Design</h3>
+      {/* 🔹 Başlık artık çevirilerden geliyor */}
+      <h3 className="slider-title" style={{ marginBottom: "1rem" }}>
+        {t("sections.interiorDesign")}
+      </h3>
 
       <Slider {...settings}>
         {interiorImages.map((src, index) => (
           <div key={index}>
-             <div className="slide-inner">
-            <ImageSlide
-              src={src}
-              alt={`Interior ${index + 1}`}
-              index={index}
-              images={interiorImages}   // ✅ Lightbox için gerekli dizi
-            />
+            <div className="slide-inner">
+              <ImageSlide
+                src={src}
+                alt={`Interior ${index + 1}`}
+                index={index}
+                images={interiorImages}   // ✅ Lightbox için gerekli dizi
+              />
             </div>
           </div>
         ))}

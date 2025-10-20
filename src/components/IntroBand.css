@@ -1,0 +1,60 @@
+/* =======================
+   RAIN CONSTRUCTION HERO (minimal version)
+   ======================= */
+
+:root {
+  --hero-dark-top: 0.12;
+  --hero-dark-bottom: 0.05;
+}
+
+/* Hero alanı */
+.intro-band {
+  position: relative;
+  isolation: isolate;
+  background: url('/images/rain-construction-modern-living.png') center/cover no-repeat;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Ortalamayı koruyalım */
+}
+
+/* Overlay (karartma efekti) */
+.intro-band__overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, var(--hero-dark-top)),
+    rgba(0, 0, 0, var(--hero-dark-bottom))
+  );
+  z-index: 0;
+}
+
+/* İçerik kapsayıcısı */
+.intro-band__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+.intro-band__content {
+  text-align: center;
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .intro-band {
+    height: auto;
+    padding: 56px 0;
+  }
+}
+
+#hero,
+.projects-section {
+  scroll-margin-top: calc(var(--nav-h, 80px) + 12px);
+}

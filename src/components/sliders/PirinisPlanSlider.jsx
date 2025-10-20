@@ -1,6 +1,6 @@
-// src/components/sliders/PirinisPlanSlider.jsx
 import React from "react";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next"; // 🔹 eklendi
 import "./Sliders.css";
 import ImageSlide from "../ImageSlide";
 
@@ -13,7 +13,7 @@ const images = [
   "/images/pirinis/plan6-new.webp",
 ];
 
-// Oklar — Slick prop'larını devral!
+// 🔹 Slick prop’larını devralan ok bileşenleri
 const NextArrow = ({ className, style, onClick }) => (
   <button
     className={`${className || ""} custom-arrow is-next`.trim()}
@@ -33,6 +33,8 @@ const PrevArrow = ({ className, style, onClick }) => (
 );
 
 export default function PirinisPlanSlider() {
+  const { t } = useTranslation(); // 🔹 i18n hook
+
   const settings = {
     dots: true,
     infinite: true,
@@ -50,14 +52,23 @@ export default function PirinisPlanSlider() {
   };
 
   return (
-    <div className="slider-container plan-slider">
-      <h3 className="slider-title">Apartment Plans</h3>
+    <div
+      className="slider-container plan-slider"
+      style={{ marginTop: "3rem" }}
+    >
+      {/* 🔹 Başlık çok dilli */}
+      <h3
+        className="slider-title"
+        style={{ textAlign: "center", marginBottom: "1rem" }}
+      >
+        {t("sections.apartmentPlans")}
+      </h3>
 
       <Slider {...settings}>
         {images.map((src, i) => (
           <div key={i}>
-            <div className="slide-inner">{/* gutter burada */}
-              <div className="plan-frame">{/* sabit oranlı çerçeve */}
+            <div className="slide-inner">
+              <div className="plan-frame">
                 <ImageSlide
                   src={src}
                   alt={`Plan ${i + 1}`}

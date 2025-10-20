@@ -1,4 +1,6 @@
-/* components/Navbar.css */
+:root { --nav-h: 80px; }  /* güvenli varsayılan; JS bunu güncelliyor */
+
+/* --- Sabit navbar --- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -6,8 +8,18 @@
   background-color: #2f2f36;
   padding: 1rem 2rem;
   color: white;
-  position: relative;
+
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  width: 100%;
   z-index: 1000;
+}
+
+.navbar-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-logo {
@@ -15,7 +27,6 @@
   align-items: center;
   gap: 4rem;
 }
-
 .logo-link {
   display: flex;
   align-items: center;
@@ -23,14 +34,12 @@
   gap: 1.2rem;
   margin-left: 0.5rem;
 }
-
 .navbar-logo img {
   height: 80px;
   border-radius: 4px;
   background: white;
   padding: 4px;
 }
-
 .brand-text {
   font-size: 1.6rem;
   font-weight: bold;
@@ -38,51 +47,64 @@
   letter-spacing: 1px;
 }
 
+/* --- Linkler --- */
 .nav-links {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
 
+/* BUTONU LİNKE BENZET: .linklike eklendi */
+.linklike {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Link, dropdown başlığı ve linklike aynı stilde */
 .nav-links a,
-.nav-links .nav-item span {
+.nav-links .nav-item span,
+.dropdown-toggle,
+.linklike {
   color: white;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
+  background: transparent;
+  border: 0;
+  font: inherit;
 }
 
+/* Hover renkleri */
 .nav-links a:hover,
-.dropdown-menu a:hover {
+.dropdown-menu a:hover,
+.dropdown-toggle:hover,
+.linklike:hover {
   color: #f39c12;
 }
 
-/* Dropdown container */
-.nav-item.dropdown {
-  position: relative;
-}
-
+/* --- Dropdown --- */
+.nav-item.dropdown { position: relative; }
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100%; left: 0;
   background-color: #3c3c44;
   flex-direction: column;
-  min-width: 150px;
+  min-width: 180px;
   z-index: 999;
 }
-
-.nav-item.dropdown:hover .dropdown-menu {
-  display: flex;
-}
+.nav-item.dropdown:hover .dropdown-menu { display: flex; }   /* desktop */
+.nav-item.dropdown.open .dropdown-menu { display: flex; }    /* mobil tık */
 
 .dropdown-menu a,
 .disabled-link {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   display: block;
 }
-
 .disabled-link {
   color: #aaa;
   cursor: not-allowed;
@@ -90,7 +112,16 @@
   font-style: italic;
 }
 
-/* Burger menu button */
+.lang-select select {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* --- Burger --- */
 .burger {
   display: none;
   font-size: 1.8rem;
@@ -101,16 +132,16 @@
   z-index: 1001;
 }
 
-/* Mobile styles */
+/* --- Mobil --- */
 @media (max-width: 768px) {
-  .burger {
-    display: block;
-  }
+  .burger { display: block; }
 
   .nav-links {
     display: none;
     flex-direction: column;
     align-items: center;
+
+    /* fixed navbar’ın hemen altından açılsın */
     position: absolute;
     top: 100%;
     left: 0;
@@ -120,23 +151,18 @@
     z-index: 999;
     gap: 1.2rem;
   }
-
-  .nav-links.open {
-    display: flex;
-  }
+  .nav-links.open { display: flex; }
 
   .nav-links a,
-  .nav-links .nav-item span {
+  .nav-links .nav-item span,
+  .dropdown-toggle,
+  .linklike {
     width: 100%;
     text-align: center;
     padding: 0.5rem 0;
   }
 
-  .nav-item.dropdown {
-    width: 100%;
-    text-align: center;
-  }
-
+  .nav-item.dropdown { width: 100%; text-align: center; }
   .dropdown-menu {
     position: static;
     background-color: #3c3c44;
@@ -146,40 +172,24 @@
     padding-left: 0;
     text-align: center;
   }
+  .nav-item.dropdown:hover .dropdown-menu { display: flex; }
+  .nav-item.dropdown.open .dropdown-menu { display: flex; }
 
-  .nav-item.dropdown:hover .dropdown-menu {
-    display: flex;
-  }
-
-  .dropdown-menu a {
-    padding: 0.5rem;
-    text-align: center;
-  }
-
-  .navbar-logo img {
-    height: 48px;
-  }
-
-  .brand-text {
-    font-size: 1.1rem;
-  }
+  .navbar-logo img { height: 48px; }
+  .brand-text { font-size: 1.1rem; }
 }
 
-/* Dil seçici */
-.language-switcher {
-  display: flex;
-  gap: 0.5rem;
-  margin-left: 1rem;
+/* --- Erişilebilirlik --- */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
 }
 
-.language-switcher button {
-  background: transparent;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.language-switcher button:hover {
-  color: #f39c12;
+/* Sayfa içi scroll ve sabit navbar ofseti (GLOBAL) */
+html {
+  scroll-behavior: smooth;
+  /* 🔑 sabit navbar’ın yüksekliği kadar global ofset */
+  scroll-padding-top: calc(var(--nav-h, 80px) + 8px);
 }

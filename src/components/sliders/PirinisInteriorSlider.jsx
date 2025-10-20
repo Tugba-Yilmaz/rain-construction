@@ -1,9 +1,10 @@
-// src/components/sliders/PirinisInteriorSlider.jsx
 import React from "react";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next"; // 🔹 çeviri eklendi
 import "./Sliders.css";
 import ImageSlide from "../ImageSlide";
 
+// 🔹 Görseller
 const images = [
   "/images/pirinis/interior1-new.webp",
   "/images/pirinis/interior2-new.webp",
@@ -13,7 +14,7 @@ const images = [
   "/images/pirinis/interior6-new.webp",
 ];
 
-// Ok bileşenleri — Slick prop'larını devral!
+// 🔹 Ok bileşenleri — Slick prop'larını devralır
 const NextArrow = ({ className, style, onClick }) => (
   <button
     className={`${className || ""} custom-arrow is-next`.trim()}
@@ -33,11 +34,13 @@ const PrevArrow = ({ className, style, onClick }) => (
 );
 
 export default function PirinisInteriorSlider() {
+  const { t } = useTranslation(); // 🔹 i18n hook
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,                // desktop/tablet
+    slidesToShow: 2, // desktop/tablet
     slidesToScroll: 1,
     centerMode: false,
     centerPadding: "0",
@@ -53,8 +56,17 @@ export default function PirinisInteriorSlider() {
   };
 
   return (
-    <div className="slider-container interior-slider" style={{ marginTop: "3rem" }}>
-      <h3 className="slider-title">INTERIOR DESIGNS</h3>
+    <div
+      className="slider-container interior-slider"
+      style={{ marginTop: "3rem" }}
+    >
+      {/* 🔹 Başlık çok dilli */}
+      <h3
+        className="slider-title"
+        style={{ textAlign: "center", marginBottom: "1rem" }}
+      >
+        {t("sections.interiorDesign")}
+      </h3>
 
       <Slider {...settings}>
         {images.map((src, i) => (

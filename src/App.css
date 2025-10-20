@@ -67,3 +67,7 @@ body {
     align-items: center;
   }
 }
+
+html { scroll-behavior: smooth; }
+body { scroll-padding-top: var(--nav-h, 80px); } /* fixed navbar yüksekliği kadar boşluk */
+
