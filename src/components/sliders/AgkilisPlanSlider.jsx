@@ -8,11 +8,11 @@ import ImageSlide from "../ImageSlide";
 
 const planImages = [
   "/images/agkilis/ground.webp",
-  "/images/agkilis/1st.webp",
-  "/images/agkilis/2nd.webp",
-  "/images/agkilis/3rd.webp",
-  "/images/agkilis/4th.webp",
-  "/images/agkilis/5th.webp",
+  "/images/agkilis/1st-new.webp",
+  "/images/agkilis/2nd-new.webp",
+  "/images/agkilis/3rd-new.webp",
+  "/images/agkilis/4th-new.webp",
+  "/images/agkilis/5th-new.webp",
 ];
 
 // 🔹 Özel ok bileşenleri

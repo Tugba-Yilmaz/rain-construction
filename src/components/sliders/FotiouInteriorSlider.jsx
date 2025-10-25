@@ -8,6 +8,14 @@ import "./Sliders.css";
 import ImageSlide from "../ImageSlide"; // ✅ Ortak bileşen
 
 const interiorImages = [
+ "/images/fotiou/Fotiou-koritsas-Yatak-odası-1.webp",
+ "/images/fotiou/Fotiou koritsas-Oturma odası.webp",
+  "/images/fotiou/Fotiou koritsas-Oturma odası 17.webp",
+  "/images/fotiou/Fotiou koritsas-Oturma odası 7.webp",
+  "/images/fotiou/Fotiou koritsas-Oturma odası 6.webp",
+  "/images/fotiou/Fotiou koritsas-Banyo.webp",
+ "/images/fotiou/Fotiou koritsas-Teras 9.webp",
+ "/images/fotiou/Fotiou-koritsas-Balkon.webp",
   "/images/fotiou/fotiou-interior1-new.webp",
   "/images/fotiou/fotiou-interior2-new.webp",
   "/images/fotiou/fotiou-interior3-new.webp",
