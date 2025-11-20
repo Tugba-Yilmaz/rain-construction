@@ -19,6 +19,7 @@ export default function ImageSlide({ src, alt, index, images }) {
       className="slider-img"
       role="button"
       tabIndex={0}
+      loading="lazy"
       onClick={() => open(images, index)}
       onKeyDown={handleKey}
       draggable={false}

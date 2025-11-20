@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+dist.zip
+dist_*.zip
+dist/
+dist.zip
+dist_*.zip
+dist/
+dist.zip
+dist_*.zip
+dist/

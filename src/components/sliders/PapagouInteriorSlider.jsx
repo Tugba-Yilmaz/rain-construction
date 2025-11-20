@@ -6,15 +6,30 @@ import ImageSlide from "../ImageSlide";
 
 // 🔹 Görseller
 const images = [
-  "/images/papagou/papagou-interior1-new.webp",
-  "/images/papagou/papagou-interior2-new.webp",
-  "/images/papagou/papagou-interior3-new.webp",
-  "/images/papagou/papagou-interior4-new.webp",
-  "/images/papagou/papagou-interior5-new.webp",
-  "/images/papagou/papagou-interior6-new.webp",
-  "/images/papagou/papagou-interior7-new.webp",
-  "/images/papagou/papagou-interior8-new.webp",
-  "/images/papagou/papagou-interior9-new.webp",
+  "/images/papagou/24-new.webp",
+  "/images/papagou/25-new.webp",
+  "/images/papagou/21-new.webp",
+  "/images/papagou/27-new.webp",
+  "/images/papagou/19-new.webp",
+  "/images/papagou/15-new.webp",
+  "/images/papagou/31-new.webp",
+  "/images/papagou/13-new.webp",
+  "/images/papagou/9-new.webp",
+  "/images/papagou/10-new.webp",
+  "/images/papagou/12-new.webp",
+  "/images/papagou/1-new.webp",
+  "/images/papagou/3-new.webp",
+  "/images/papagou/4-new.webp",
+  "/images/papagou/5-new.webp",
+  "/images/papagou/6-new.webp",
+  "/images/papagou/14-new.webp",
+  "/images/papagou/17-new.webp",
+  "/images/papagou/26-new.webp",
+  "/images/papagou/34-new.webp",
+  "/images/papagou/35-new.webp",
+  "/images/papagou/29-new.webp",
+  "/images/papagou/30-new.webp",
+  "/images/papagou/36-new.webp",
 ];
 
 // 🔹 Ok bileşenleri — Slick prop'larını devralır
@@ -64,7 +79,10 @@ export default function PapagouInteriorSlider() {
       style={{ marginTop: "3rem" }}
     >
       {/* 🔹 Başlık çok dilli hale getirildi */}
-      <h3 className="slider-title" style={{ textAlign: "center", marginBottom: "1rem" }}>
+      <h3
+        className="slider-title"
+        style={{ textAlign: "center", marginBottom: "1rem" }}
+      >
         {t("sections.interiorDesign")}
       </h3>
 

@@ -1,5 +1,5 @@
 /* =======================
-   RAIN CONSTRUCTION HERO (minimal version)
+   RAIN CONSTRUCTION HERO 
    ======================= */
 
 :root {
@@ -11,12 +11,12 @@
 .intro-band {
   position: relative;
   isolation: isolate;
-  background: url('/images/rain-construction-modern-living.png') center/cover no-repeat;
+  background: url("/images/rain-construction-first.png") center/cover no-repeat;
   color: #fff;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; /* Ortalamayı koruyalım */
+  justify-content: center;
 }
 
 /* Overlay (karartma efekti) */
@@ -41,20 +41,56 @@
   padding: 0 24px;
 }
 
-
 .intro-band__content {
   text-align: center;
 }
 
 /* Mobil uyum */
-@media (max-width: 768px) {
+/* 1) Küçük ekranlı telefonlar 0–480px */
+@media (max-width: 480px) {
   .intro-band {
-    height: auto;
-    padding: 56px 0;
+    height: 260px;
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+}
+
+/* 2) Orta-büyük telefonlar 481px–768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .intro-band {
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+  }
+}
+
+/* 3) Tabletler, katlanabilir cihazlar 769px–1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .intro-band {
+    height: 50vh;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+}
+
+/* 4) Masaüstü 1025px+ (mevcut hali) */
+@media (min-width: 1025px) {
+  .intro-band {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
   }
 }
 
 #hero,
 .projects-section {
   scroll-margin-top: calc(var(--nav-h, 80px) + 12px);
+}
+.intro-band {
+  margin-bottom: 0 !important;
 }

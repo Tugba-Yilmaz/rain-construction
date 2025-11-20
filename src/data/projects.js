@@ -2,7 +2,22 @@ const projects = [
   {
     id: "papagou",
     title: "PAPAGOU",
-    image: "/images/papagou/papagou-new.webp",
+    image: "/images/papagou/ext-1-new.webp",
+    description: "Explore Now",
+    comingSoon: false,
+  },
+  {
+    id: "agklis",
+    title: "AGKLIS",
+    image: "/images/agkilis/agklis-new.webp",
+    description: "Explore Now",
+    comingSoon: false,
+  },
+
+  {
+    id: "fotiou-koritsas-84",
+    title: "Fotiou Koritsas 84",
+    image: "/images/fotiou/fotiou-new.webp",
     description: "Explore Now",
     comingSoon: false,
   },
@@ -14,26 +29,13 @@ const projects = [
     comingSoon: false,
   },
   {
-    id: "fotiou-koritsas-84",
-    title: "Fotiou Koritsas 84",
-    image: "/images/fotiou/fotiou-new.webp",
-    description: "Explore Now",
-    comingSoon: false,
-  },
-  {
-    id: "agklis",
-    title: "AGKLIS",
-    image: "/images/agkilis/agklis-new.webp",
-    description: "Explore Now",
-    comingSoon: false,
-  },
-  {
     id: "leocharous-15",
     title: "LEOCHAROUS 15",
     image: "/images/leocharous.jpg",
     description: "Coming Soon",
     comingSoon: true,
   },
+
   {
     id: "coming-soon",
     title: "COMING SOON",
